@@ -20,12 +20,16 @@ fetch('https://my-json-server.typicode.com/agustinruatta/fake_json_server_db/pro
             nombre.appendChild(document.createTextNode(producto.title));
 
             let descripcion = document.createElement('p');
-            descripcion.appendChild(document.createTextNode(producto.price));
+            descripcion.appendChild(document.createTextNode(producto.description));
+
+            let precio = document.createElement('p');
+            precio.appendChild(document.createTextNode(producto.price));
 
             let div = document.createElement('div');
             div.appendChild(imagen);
             div.appendChild(nombre);
             div.appendChild(descripcion);
+            div.appendChild(precio);
             div.className = 'product'
 
             document.getElementById('product-list').appendChild(div);
