@@ -1,18 +1,12 @@
-fetch('https://my-json-server.typicode.com/agustinruatta/fake_json_server_db/products/1')
-    .then(response => response.json())
-    .then(json => {
-        let titulo = document.getElementById('titulo-producto')
-        titulo.appendChild(document.createTextNode(json.title))
-
-        let descripcion = document.getElementById('descripcion-producto');
-        descripcion.appendChild(document.createTextNode(json.description));
-
-        let link = document.getElementById('link-producto');
-        link.href = json.factory_url;
-
-        let precio = document.getElementById('precio-producto');
-        precio.appendChild(document.createTextNode(json.price));
-
-        let imagen = document.getElementById('imagen-producto');
-        imagen.src = json.image_url;
-    })
+Vue.createApp({
+    data() {
+        return {
+            id: 1,
+            title: "Notebook HP 14-dq2024la",
+            description: "Computadora HP orientado para gama media. Procesador Intel® Core™ i3 de 11.ª generación.  Windows 10 Home 64.  Unidad de estado sólido PCIe® NVMe™ M.2 de 256 GB . Pantalla de 14 pulgadas.",
+            image_url: "https://ar-media.hptiendaenlinea.com/catalog/product/8/V/8VW01LA-1_T1615590539.png",
+            factory_url: "https://www.hp.com/ar-es/shop/notebook-hp-14-dq2024la-3v8j6la.html",
+            price: "$ 98.038"
+        }
+    }
+}).mount('#app')
