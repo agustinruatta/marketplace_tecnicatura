@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <title>Notebook Dell 12345</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="javascript/product_script.js" defer></script>
 </head>
 <body>
+<div id="app">
     <div id="header">
         <label>Ingrese su búsqueda: <input type="text"></label>
         <button>Buscar</button>
     </div>
     <div id="product-info">
         <div>
-            <img id="imagen-producto" class="product-image" alt="Imagen de notebook" src="https://programacion.net/files/article/20170127020138_cargando.png">
+            <img id="imagen-producto" class="product-image" alt="Imagen de notebook" :src="image_url">
         </div>
         <div>
-            <h1 id="titulo-producto"></h1>
-            <p id="descripcion-producto" class="product-description"></p>
-            <a id="link-producto" href="">Sitio fabricante</a>
-            <p id="precio-producto"></p>
+            <h1 id="titulo-producto">{{ title }}</h1>
+            <p id="descripcion-producto" class="product-description">{{ description }}</p>
+            <a id="link-producto" :href="factory_url">Sitio fabricante</a>
+            <p id="precio-producto">{{ price }}</p>
         </div>
     </div>
     <div id="footer">
         <p>Marketplace tecnicatura</p>
     </div>
+</div>
 </body>
 </html>

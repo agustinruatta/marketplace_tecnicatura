@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <title>Marketplace Tecnicatura</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="javascript/index_script.js" defer></script>
 </head>
 <body>
-<div class="container">
+<div id="app" class="container">
     <div id="header">
         <label>Ingrese su búsqueda: <input type="text"></label>
         <button>Buscar</button>
     </div>
-    <p id="cantidad-productos"></p>
+    <p id="cantidad-productos">Cantidad de productos: {{ productos.length }}</p>
     <div id="product-list">
+        <div v-for="producto in productos" class="product">
+            <img :src="producto.image_url" class="product-image" alt="Imagen de notebook">
+            <p>{{ producto.title }}</p>
+            <p>{{ producto.description }}</p>
+            <p>{{ producto.price }}</p>
+        </div>
     </div>
     <div id="footer">
         <p>Marketplace tecnicatura</p>
