@@ -22,6 +22,10 @@
             <p id="descripcion-producto" class="product-description">{{ description }}</p>
             <a id="link-producto" :href="factory_url">Sitio fabricante</a>
             <p id="precio-producto">{{ price }}</p>
+            <button @click="comprarProducto">Comprar</button>
+        </div>
+        <div>
+            <p>Cantidad productos comprados: {{cantidadProductosComprados}}</p>
         </div>
     </div>
     <div id="footer">
