@@ -15,13 +15,31 @@
     </div>
     <div id="product-info">
         <div>
-            <img id="imagen-producto" class="product-image" alt="Imagen de notebook" :src="image_url">
+            <img @mouseover="changeImage(urlImage)"
+                 v-for="urlImage in imagesURL"
+                 class="imagen-previsualizacion"
+                 :src="urlImage">
+        </div>
+        <div>
+            <img id="imagen-producto" class="product-image" alt="Imagen de notebook" :src="imageUrl">
         </div>
         <div>
             <h1 id="titulo-producto">{{ title }}</h1>
             <p id="descripcion-producto" class="product-description">{{ description }}</p>
-            <a id="link-producto" :href="factory_url">Sitio fabricante</a>
-            <p id="precio-producto">{{ price }}</p>
+            <a id="link-producto" :href="factoryUrl">Sitio fabricante</a>
+            <p id="precio-producto">$ {{ price }}</p>
+            <button @click="buyNotebook">Comprar</button>
+            <p>RAM:</p>
+            <ul>
+                <li @click="changePrice(notebooksType.price)" v-for="notebooksType in notebooksTypes"><button>{{notebooksType.ramAmount}}</button></li>
+            </ul>
+        </div>
+        <div>
+            <p>Carro:</p>
+            <ul>
+                <li v-for="boughtNotebook in boughtNotebooks">{{boughtNotebook.title}}: ${{boughtNotebook.price}}:</li>
+                <li>Total: ${{ totalAmount() }}</li>
+            </ul>
         </div>
     </div>
     <div id="footer">

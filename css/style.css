@@ -20,8 +20,13 @@
 
 #product-info {
     display: grid;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 5% 30% auto 10%;
     margin: 1em;
+}
+
+.imagen-previsualizacion {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .product {
