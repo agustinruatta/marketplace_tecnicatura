@@ -16,7 +16,6 @@ let app = Vue.createApp({
                     {ramAmount: '8 GB', price: 100000},
                     {ramAmount: '16 GB', price: 125000},
                 ],
-                boughtNotebooks: [],
             }
         }
     },
