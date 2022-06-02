@@ -2,13 +2,13 @@ app.component('product-info', {
     template:
         `<div id="product-info">
             <div>
-                <img @mouseover="changeImage(urlImage)"
-                     v-for="urlImage in product.imagesURL"
+                <img @mouseover="changeImage(url)"
+                     v-for="url in product.imagesURL"
                      class="imagen-previsualizacion"
-                     :src="urlImage">
+                     :src="url">
             </div>
             <div>
-                <img id="imagen-producto" class="product-image" alt="Imagen de notebook" :src="product.imageUrl">
+                <img id="imagen-producto" class="product-image" alt="Imagen de notebook" :src="imageUrl">
             </div>
             <div>
                 <h1 id="titulo-producto">{{ product.title }}</h1>
@@ -36,7 +36,7 @@ app.component('product-info', {
     },
     data() {
         return {
-            urlImage: this.product.imagesURL[0],
+            imageUrl: this.product.imagesURL[0],
             boughtNotebooks: []
         }
     },
