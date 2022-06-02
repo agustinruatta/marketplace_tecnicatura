@@ -1,4 +1,4 @@
-Vue.createApp({
+let app = Vue.createApp({
     data() {
         return {
             productos: [
@@ -37,4 +37,4 @@ Vue.createApp({
             ]
         }
     }
-}).mount('#app')
+})
