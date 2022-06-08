@@ -6,20 +6,17 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/vue@3"></script>
     <script src="javascript/index_script.js" defer></script>
+    <script src="javascript/ProductCard.js" defer></script>
+    <script src="javascript/Search.js" defer></script>
+    <script src="javascript/mounter.js" defer></script>
 </head>
 <body>
 <div id="app" class="container">
-    <div id="header">
-        <label>Ingrese su búsqueda: <input type="text"></label>
-        <button>Buscar</button>
-    </div>
+    <search></search>
     <p id="cantidad-productos">Cantidad de productos: {{ productos.length }}</p>
     <div id="product-list">
         <div v-for="producto in productos" class="product">
-            <img :src="producto.image_url" class="product-image" alt="Imagen de notebook">
-            <p>{{ producto.title }}</p>
-            <p>{{ producto.description }}</p>
-            <p>{{ producto.price }}</p>
+            <product-card :product="producto"></product-card>
         </div>
     </div>
     <div id="footer">
