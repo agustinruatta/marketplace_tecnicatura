@@ -10,7 +10,7 @@ import Search from '@/components/Search.vue';
 import ProductInfo from '@/components/ProductInfo.vue';
 
 export default {
-  name: 'About',
+  name: 'Product',
   components: {
     Search,
     ProductInfo,
