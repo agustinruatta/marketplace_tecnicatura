@@ -14,12 +14,12 @@
       <h1 id="titulo-producto">{{ product.title }}</h1>
       <p id="descripcion-producto" class="product-description">{{ product.description }}</p>
       <a id="link-producto" :href="product.factoryUrl">Sitio fabricante</a>
-      <p id="precio-producto">$ {{ product.price }}</p>
+      <p id="precio-producto">$ {{ price }}</p>
       <button @click="buyNotebook">Comprar</button>
       <p>RAM:</p>
       <ul>
-        <li @click="changePrice(notebooksType.price)"
-          v-for="notebooksType in product.notebooksTypes" :key="notebooksType">
+        <li @click="changeSelectedNotebook(index)"
+          v-for="(notebooksType, index) in product.notebooksTypes" :key="notebooksType">
           <button>{{notebooksType.ramAmount}}</button></li>
       </ul>
     </div>
@@ -43,6 +43,7 @@ export default {
   },
   data() {
     return {
+      selectedNotebook: 0,
       imageUrl: this.product.image_url,
       boughtNotebooks: [],
     };
@@ -56,16 +57,19 @@ export default {
 
       return total;
     },
+    price() {
+      return this.product.notebooksTypes[this.selectedNotebook].price;
+    },
   },
   methods: {
     buyNotebook() {
-      this.boughtNotebooks.push({ title: this.product.title, price: this.product.price });
+      this.boughtNotebooks.push({ title: this.product.title, price: this.price });
     },
     changeImage(imageUrl) {
       this.imageUrl = imageUrl;
     },
-    changePrice(price) {
-      this.price = price;
+    changeSelectedNotebook(index) {
+      this.selectedNotebook = index;
     },
   },
 };
