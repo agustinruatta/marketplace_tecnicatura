@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-      imageUrl: this.product.imagesURL[0],
+      imageUrl: this.product.image_url[0],
       boughtNotebooks: [],
     };
   },
