@@ -16,13 +16,19 @@ export default {
     Search,
     ProductInfo,
   },
+  props: {
+    id: {
+      required: true,
+      type: String,
+    },
+  },
   data() {
     return {
       product: null,
     };
   },
   created() {
-    productService.getProduct()
+    productService.getProduct(this.id)
       .then((response) => {
         this.product = response.data;
       });

@@ -3,7 +3,9 @@
   <p id="cantidad-productos">Cantidad de productos: {{ productos.length }}</p>
   <div id="product-list">
     <div v-for="producto in productos" :key="producto.id" class="product">
-      <product-card :product="producto"></product-card>
+      <router-link :to="{name: 'Product', params: {id: producto.id}}">
+        <product-card :product="producto"></product-card>
+      </router-link>
     </div>
   </div>
   <div id="footer">
