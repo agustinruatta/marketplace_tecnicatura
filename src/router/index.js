@@ -9,8 +9,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/product',
+    path: '/product/:id',
     name: 'Product',
+    props: true,
     component: Product,
   },
 ];
